@@ -1,0 +1,35 @@
+@host = localhost:3333
+
+### Subscribe to event
+POST http://{{host}}/subscriptions
+Content-Type: application/json
+
+{
+  "name": "Mary Lima",
+  "email": "mary@gmail.com",
+  "referrer": "a6243179-d7ce-48ce-82d3-f31fa4027d8a"
+}
+
+### Access invite link
+GET http://{{host}}/invites/703beb80-eb8b-47d1-9d3d-a2c25f9a1bb2
+
+### Get subscriber invites clicks
+GET http://{{host}}/subscribers/703beb80-eb8b-47d1-9d3d-a2c25f9a1bb2/ranking/clicks
+
+### Get subscriber invites count
+GET http://{{host}}/subscribers/703beb80-eb8b-47d1-9d3d-a2c25f9a1bb2/ranking/count
+
+### Get subscriber ranking position
+GET http://{{host}}/subscribers/703beb80-eb8b-47d1-9d3d-a2c25f9a1bb2/ranking/position
+
+### Get ranking
+GET http://{{host}}/ranking
+
+### Send a message
+POST http://{{host}}/messages
+Content-Type: application/json
+
+{
+  "message": "Me retorne o nome dos usuários que não conseguiram convidar ninguém pro evento!"
+}
+
